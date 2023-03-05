@@ -1,0 +1,6 @@
+setup file - it is used to build ml app as a package.
+src- init file is being created inside src to consider src as a package. Find_packages find outs all the init files under the directory to consider 
+the specific folder as a package.
+
+
+
