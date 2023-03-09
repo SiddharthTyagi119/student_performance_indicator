@@ -1,6 +1,21 @@
-setup file - it is used to build ml app as a package.
-src- init file is being created inside src to consider src as a package. Find_packages find outs all the init files under the directory to consider 
+1-setup file - it is used to build ml app as a package.
+2-src- init file is being created inside src to consider src as a package. Find_packages find outs all the init files under the directory to consider 
 the specific folder as a package.
+3-Components- component will be created as a package-
+data ingestion,transformation and model trainer.
+4-Pipeline-
+train_pipeline-To trigger components files
+predict-to do prediction
+5-Logger and exception -to do logging and exception handling
+6-Utils- to write common things which will be used in the entire app
+7- eda and model trainer ipynb file
+
+
+
+
+steps-
+write setup.py and maintain github then loggger and exception
+download data and then proceed with eda file and model training just for observations.
 
 
 
