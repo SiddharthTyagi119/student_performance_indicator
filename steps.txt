@@ -1,3 +1,4 @@
+Req files-
 1-setup file - it is used to build ml app as a package.
 2-src- init file is being created inside src to consider src as a package. Find_packages find outs all the init files under the directory to consider 
 the specific folder as a package.
@@ -13,9 +14,12 @@ predict-to do prediction
 
 
 
+
 steps-
 write setup.py and maintain github then loggger and exception
 download data and then proceed with eda file and model training just for observations.
+create data_ingestion file that will create artifact folder that will hold trin and test data
+create data_transformation and in utils create a fn to save the preprocessor
 
 
 
