@@ -19,7 +19,5 @@ steps-
 write setup.py and maintain github then loggger and exception
 download data and then proceed with eda file and model training just for observations.
 create data_ingestion file that will create artifact folder that will hold trin and test data
-create data_transformation and in utils create a fn to save the preprocessor
-
-
-
+create data_transformation and in utils create a fn to save the preprocessor (preprocessing steps)
+train the model  and in utils create a fn to save the pickle file of the model
