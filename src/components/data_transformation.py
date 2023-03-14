@@ -14,7 +14,8 @@ import os
 
 from src.utils import save_object
 
-#providing inputs that are req for data transformation component. here defining pkl file to save model
+#providing inputs that are req for data transformation component. here defining pkl file to save 
+#all data preprocessor as a pickle file
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
