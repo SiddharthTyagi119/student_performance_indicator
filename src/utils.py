@@ -8,11 +8,14 @@ import dill
 from sklearn.metrics import r2_score
 
 from src.exception import CustomException
-
+from src.logger import logging
 from src.exception import CustomException
+
+
 #function to save the a pickle file in hard disk
 def save_object(file_path, obj):
     try:
+        #creating dir
         dir_path = os.path.dirname(file_path)
 
         os.makedirs(dir_path, exist_ok=True)

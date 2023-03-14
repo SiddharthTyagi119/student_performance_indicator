@@ -18,6 +18,7 @@ from src.utils import save_object
 #all data preprocessor as a pickle file
 @dataclass
 class DataTransformationConfig:
+    #path to save a model/thing as a pickle file
     preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
 
 class DataTransformation:
@@ -63,7 +64,7 @@ class DataTransformation:
             logging.info(f"Numerical columns: {numerical_columns}")
             
 
-            #combining/defining both the pipelines
+            #combining/defining both the pipelines together
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
@@ -106,7 +107,7 @@ class DataTransformation:
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
              
-             #applying our preprocessors(pipelne) on train and test
+             #applying our preprocessors(pipeline) on train and test
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
@@ -117,7 +118,7 @@ class DataTransformation:
 
             logging.info(f"Saved preprocessing object.")
             
-            #saving the preprocessor as a model with all the transformation in a  pickle file 
+            #saving the preprocessor object as a  pickle file 
             #saving this in hard disk
             save_object(
 
