@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score
 from src.exception import CustomException
 
 from src.exception import CustomException
-#function to save the preprocessor as a pickle file in hard disk
+#function to save the a pickle file in hard disk
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)
