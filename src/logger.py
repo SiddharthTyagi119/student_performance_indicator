@@ -18,6 +18,6 @@ logging.basicConfig(
 ) 
 
 #testing our logger file
-if __name__=="__main__":
+'''if __name__=="__main__":
     logging.info("logging has started")
-    
+    '''

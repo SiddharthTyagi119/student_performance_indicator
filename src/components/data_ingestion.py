@@ -9,6 +9,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.exception import CustomException
+from src.logger import logging
+
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
@@ -32,6 +35,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
+            #reading the dataset
             df=pd.read_csv(r"E:\Data science\Projects\mlproject\notebook\data\stud.csv")
             logging.info('Read the dataset as dataframe')
             
