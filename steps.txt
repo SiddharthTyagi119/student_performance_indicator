@@ -18,6 +18,9 @@ predict-to do prediction
 steps-
 write setup.py and maintain github then loggger and exception
 download data and then proceed with eda file and model training just for observations.
-create data_ingestion file that will create artifact folder that will hold trin and test data
+create data_ingestion file that will create artifact folder that will hold train and test data
 create data_transformation and in utils create a fn to save the preprocessor (preprocessing steps)
 train the model  and in utils create a fn to save the pickle file of the model
+perform hyperparameter tuning
+create app.py --along with a template folder with home page and index page
+create prediction pipeline
