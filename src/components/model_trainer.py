@@ -37,6 +37,8 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
+
+            #models we are going to try out
             models = {
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
@@ -83,7 +85,8 @@ class ModelTrainer:
                 }
                 
             }
-
+            #evaluate model will have entire report of the model which we are getting in the form of
+            #dictionary 
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
                                              models=models,param=params)
             
@@ -101,11 +104,15 @@ class ModelTrainer:
                 raise CustomException("No best model found")
             logging.info(f"Best found model on both training and testing dataset")
 
+
+            #saving the pickle file of best model
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=best_model
             )
+            
 
+            #prediction on best model (x test)
             predicted=best_model.predict(X_test)
 
             r2_square = r2_score(y_test, predicted)

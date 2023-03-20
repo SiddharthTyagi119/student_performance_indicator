@@ -56,7 +56,7 @@ class DataIngestion:
             logging.info("Inmgestion of the data iss completed")
 
             return(
-                #returning theses two data for data transformtion.data transformation will grab this info.
+                #returning theses two data for data transformtion.data transformation will grab this info
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
 

@@ -18,8 +18,8 @@ def index():
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        ### home.html contains a simple data field that we need to provide our model to train to do
-        #predicition
+        
+        ### home.html contains a simple data field that we need to provide our model to train to do predicition
         return render_template('home.html')
     else:
         data=CustomData(
