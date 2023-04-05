@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
-
+from src.logger import logging
 
 class PredictPipeline:
     def __init__(self):
@@ -23,7 +23,6 @@ class PredictPipeline:
         except Exception as e:
             raise CustomException(e,sys)
 
-#maping all the input we are giving in html page with this particular values
 
 class CustomData:
     def __init__(  self,
@@ -34,6 +33,9 @@ class CustomData:
         test_preparation_course: str,
         reading_score: int,
         writing_score: int):
+
+#maping all the input we are giving in html page with the about keys particular values
+#key = input value coming from html page
 
         self.gender = gender
 
@@ -53,6 +55,7 @@ class CustomData:
 #it will return all the input in a dataframe, bcoz we train our model in a dataframe
     def get_data_as_data_frame(self):
         try:
+             
             custom_data_input_dict = {
                 "gender": [self.gender],
                 "race_ethnicity": [self.race_ethnicity],

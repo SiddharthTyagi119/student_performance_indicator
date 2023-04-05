@@ -1,6 +1,9 @@
 import os
 import sys
 from dataclasses import dataclass
+from src.logger import logging
+from src.exception import CustomException
+
 
 from catboost import CatBoostRegressor
 from sklearn.ensemble import (
@@ -19,6 +22,7 @@ from src.logger import logging
 
 from src.utils import save_object,evaluate_models
 
+#definig artifact
 @dataclass
 class ModelTrainerConfig:
     trained_model_file_path=os.path.join("artifacts","model.pkl")

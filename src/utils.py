@@ -13,7 +13,7 @@ from src.exception import CustomException
 from sklearn.model_selection import GridSearchCV
 
 
-
+#data transformation
 #function to save the a pickle file in hard disk
 def save_object(file_path, obj):
     try:
@@ -28,6 +28,7 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e, sys)
 
+#model training
 def evaluate_models(X_train, y_train,X_test,y_test,models,param):
     try:
         report = {}
@@ -46,11 +47,7 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             #selecting best parameters and then fit the model
             model.set_params(**gs.best_params_)
             model.fit(X_train,y_train)
-
-
-            #model.fit(X_train, y_train)  # Train model
             
-
             #prediction on x train and x test
             y_train_pred = model.predict(X_train)
 
@@ -62,7 +59,7 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
 
             test_model_score = r2_score(y_test, y_test_pred)
             
-            #appending all the test scores in the report
+            #appending all the test scores of all the models in the report
             report[list(models.keys())[i]] = test_model_score
 
         return report

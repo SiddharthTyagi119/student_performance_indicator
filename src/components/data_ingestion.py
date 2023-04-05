@@ -21,7 +21,7 @@ from src.components.model_trainer import ModelTrainer
 
 
 ##definig the path to store data
-#it just providing the input things that are req for data ingestion
+#just providing the input things that are req for data ingestion
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -65,12 +65,15 @@ class DataIngestion:
             raise CustomException(e,sys)
         
 if __name__=="__main__":
+    #data ingestion
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
-
+    
+    #data transformation
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
 
+    #model trainer
     modeltrainer=ModelTrainer()
     print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 

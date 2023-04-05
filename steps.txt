@@ -14,6 +14,13 @@ predict-to do prediction
 
 
 
+[setup.py>>logger.py>>exception.py]
+[ipynb file for the observation]
+[data_ingestion.py>>data_transformation.py>>utils.py]
+[model_trainer.py>>utils.py]
+[app.py and template>>predict_pipeline.py>>utils.py]
+
+
 
 steps-
 write setup.py and maintain github then loggger and exception
@@ -23,5 +30,6 @@ create data_transformation and in utils create a fn to save the preprocessor (pr
 train the model  and in utils create a fn to save the pickle file of the model
 perform hyperparameter tuning
 create app.py --along with a template folder with home page and index page
-create prediction pipeline
-create .ebextensions folder and remove debug=True under app.py to deploy the app on aws
+create prediction pipeline and a function in utils to load th pickle file
+create .ebextensions folder and remove debug=True under app.py to deploy the app on aws with cd functionality
+deploy the project on azure with github actions

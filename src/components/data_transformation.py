@@ -64,7 +64,7 @@ class DataTransformation:
             logging.info(f"Numerical columns: {numerical_columns}")
             
 
-            #combining/defining both the pipelines together
+            #combining both the pipelines together
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
@@ -111,6 +111,7 @@ class DataTransformation:
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
+            #converting the data into numpy array
             train_arr = np.c_[
                 input_feature_train_arr, np.array(target_feature_train_df)
             ]

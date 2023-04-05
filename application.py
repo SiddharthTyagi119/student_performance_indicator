@@ -19,9 +19,10 @@ def index():
 def predict_datapoint():
     if request.method=='GET':
         
-        ### home.html contains a simple data field that we need to provide our model to train to do predicition
+### home.html contains a simple data field to pass our inputs to our model to train the model
         return render_template('home.html')
     else:
+        #in post request , we will get all the vinformation from the
         data=CustomData(
             gender=request.form.get('gender'),
             race_ethnicity=request.form.get('ethnicity'),
