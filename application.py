@@ -22,7 +22,7 @@ def predict_datapoint():
 ### home.html contains a simple data field to pass our inputs to our model to train the model
         return render_template('home.html')
     else:
-        #in post request , we will get all the vinformation from the
+        #in post request , we will get all the information from the form itself
         data=CustomData(
             gender=request.form.get('gender'),
             race_ethnicity=request.form.get('ethnicity'),
